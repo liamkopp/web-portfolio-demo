@@ -21,10 +21,10 @@ class Project(models.Model):
     summary = models.TextField(max_length=1000, help_text='Enter a brief description of the project')
 
     # ManyToManyField used because a type can contain many projects. A project can have many types.
-    type = models.ManyToManyField(Type, help_text='Select a type for this project')
+    project_type = models.ManyToManyField(Type, help_text='Select a type for this project')
 
     repo_link = models.URLField(null=True)
-    image_link = models.URLField(null=True)
+    image = models.ImageField(null=True)
 
 
     def __str__(self):

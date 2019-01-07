@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +123,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     '/home/liam/Documents/web-portfolio-demo/mysite/portfolio/static/',
 )
+
+MEDIA_URL = '/media/'
+
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
+MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
