@@ -25,13 +25,7 @@ from django.urls import include
 from django.urls import path
 
 urlpatterns += [
-    path('portfolio/', include('portfolio.urls')),
-]
-
-# Add URL maps to redirect the base URL to our application
-from django.views.generic import RedirectView
-urlpatterns += [
-    path('', RedirectView.as_view(url='/portfolio/', permanent=True)),
+    path('', include('portfolio.urls')),
 ]
 
 # Use static() to add url mapping to serve static files during development (only)

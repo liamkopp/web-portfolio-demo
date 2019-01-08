@@ -20,6 +20,7 @@ class Project(models.Model):
 
     summary = models.TextField(max_length=1000, help_text='Enter a brief description of the project')
 
+    date = models.DateField(null=True)
     # ManyToManyField used because a type can contain many projects. A project can have many types.
     project_type = models.ManyToManyField(Type, help_text='Select a type for this project')
 
